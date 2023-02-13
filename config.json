@@ -1,0 +1,8 @@
+{
+    "token" : "TOKEN DU BOT",
+    "prefix" : "!",
+    "owner_id" : ID DU CREATEUR,
+
+    "blagues_token" : "TOKEN BLAGUES_API",
+    "gif_token" : "TOKEN GIPHY"
+}
