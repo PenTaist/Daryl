@@ -1,6 +1,6 @@
 {
     "token" : "TOKEN DU BOT",
-    "prefix" : "!",
+    "prefix" : "d$",
     "owner_id" : ID DU CREATEUR,
 
     "blagues_token" : "TOKEN BLAGUES_API",
