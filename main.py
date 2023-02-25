@@ -66,6 +66,21 @@ async def ServersCount(ctx):
         
         await ctx.send(embed=not_owner_embed, delete_after=5)
 
+@daryl.command(name="ServersView")
+async def ServersView(ctx):
+    if ctx.author.id == owner_id:
+        servers = daryl.guilds
+        ServerView_embed = discord.Embed(title="Voici la liste des serveurs sur lesquels je suis actuellement :", color=colors.purple)
+
+        for server in servers:
+            ServerView_embed.add_field(name=" ", value=f"\n- {server.name}", inline=False)
+        
+        await ctx.send(embed=ServerView_embed)
+    else:
+        not_owner_embed = discord.Embed(title="Seul le créateur du bot peut exécuter cette commande", color=colors.red)
+        
+        await ctx.send(embed=not_owner_embed, delete_after=5)
+
 @daryl.command(name="Token")
 async def Token(ctx):
     bot_token = token
