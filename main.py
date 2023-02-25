@@ -108,7 +108,7 @@ async def help(ctx):
 @slash.slash(description="Jouer au ping pong !")
 async def ping(ctx):
     embed = discord.Embed(title="Pong !", description=" ", color=colors.blue)
-    await ctx.send(embed=embed, delete_after=3)
+    await ctx.send(embed=embed, hidden=True)
 
 @slash.slash(description="Afficher les informations du serveur")
 async def serverinfos(ctx):
@@ -192,13 +192,13 @@ async def bans(ctx):
     if bans == []:
         no_bans_embed = discord.Embed(title="La liste des membres bannis est vide", color=colors.blue)
         
-        await ctx.send(embed=no_bans_embed)
+        await ctx.send(embed=no_bans_embed, hidden=True)
         return
     else:
         for ban in bans:
             bans_embed = discord.Embed(title="Liste des membres bannis", description=f"{ban.user.name}#{ban.user.discriminator}", color=colors.blue)
 
-            await ctx.send(embed=bans_embed)
+            await ctx.send(embed=bans_embed, hidden=True)
 
 @slash.slash(description="Expulser un membre")
 @commands.has_permissions(kick_members=True)
@@ -358,11 +358,11 @@ async def warns(ctx, user: discord.User):
         warns_embed = discord.Embed(title=" ", description=f"**Voici la liste des avertissements de {user.mention} :**", color=colors.blue)
         warns_embed.add_field(name=" ", value=f"\n\n{reason_list}", inline=False)
         
-        await ctx.send(embed=warns_embed)
+        await ctx.send(embed=warns_embed, hidden=True)
     else:
         warns_embed = discord.Embed(title=" ", description=f"**{user.mention} n'a aucuns avertissements**", color=colors.blue)
 
-        await ctx.send(embed=warns_embed, delete_after=5)
+        await ctx.send(embed=warns_embed, hidden=True)
 
 @slash.slash(description="Effacer un certain nombre de messages")
 @commands.has_permissions(manage_messages=True)
