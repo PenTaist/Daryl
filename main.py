@@ -2,8 +2,6 @@ import discord, json, asyncio, re, random, aiohttp
 from discord.ext import commands
 from blagues_api import BlaguesAPI
 from discord_slash import SlashCommand, SlashContext
-from discord_slash.utils import manage_components
-from discord_slash.model import ButtonStyle
 
 with open("./config.json") as f:
     config = json.load(f)
